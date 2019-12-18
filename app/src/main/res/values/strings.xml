@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">UlimaPromCalcKotlin</string>
+    <string name="tarea_academica">Tarea Academica:</string>
+    <string name="examen_parcial">Examen Parcial:</string>
+    <string name="calcular">Calcular</string>
+    <string name="te_vas_por">Te vas por:</string>
+</resources>
