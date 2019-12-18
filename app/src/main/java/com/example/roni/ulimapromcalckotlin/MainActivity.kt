@@ -7,6 +7,8 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.Exception
+import java.lang.NullPointerException
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,23 +26,32 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun calcResult() {
-        var notaTA = etInputTA.text.toString().toInt()
-        var notaEP = etInputEP.text.toString().toInt()
-        if ((notaTA in 0..20) and (notaEP in 0..20)){
-            var resultado = (10.5f - ((0.3f * notaTA) + (0.3f * notaEP))) / 0.4f
-            if (resultado > 0)
-            {
-                resultado += 1
+        try {
+            var notaTA = etInputTA.text.toString().toInt()
+            var notaEP = etInputEP.text.toString().toInt()
+            if ((notaTA in 0..20) and (notaEP in 0..20)){
+                var resultado = (10.5f - ((0.3f * notaTA) + (0.3f * notaEP))) / 0.4f
+                if (resultado > 0)
+                {
+                    resultado += 1
+                }
+                var result : Int = resultado.toInt()
+                tvResultado.text = result.toString()
+            } else {
+                val msjError = AlertDialog.Builder(this)
+                msjError.setTitle("Ha ocurrido un problema")
+                msjError.setMessage("Porfavor ingresa correctamente tu nota de TA y EP")
+                msjError.setPositiveButton("Ok", null)
+                msjError.show()
             }
-            var result : Int = resultado.toInt()
-            tvResultado.text = result.toString()
-        } else {
+        } catch (e : Exception){
             val msjError = AlertDialog.Builder(this)
             msjError.setTitle("Ha ocurrido un problema")
             msjError.setMessage("Porfavor ingresa correctamente tu nota de TA y EP")
             msjError.setPositiveButton("Ok", null)
             msjError.show()
         }
+
     }
 
 }
