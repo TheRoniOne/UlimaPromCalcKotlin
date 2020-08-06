@@ -14,10 +14,12 @@
         android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/tviTeVasX"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.341"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvEP"
-        app:layout_constraintTop_toBottomOf="@+id/eteInputTA" />
+        app:layout_constraintTop_toBottomOf="@+id/eteInputTA"
+        app:layout_constraintVertical_bias="0.023" />
 
     <TextView
         android:id="@+id/tvTA"
@@ -41,9 +43,7 @@
         android:text="@string/examen_parcial"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.27"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvTA"
         app:layout_constraintTop_toBottomOf="@+id/tvTA" />
 
     <Button
@@ -51,13 +51,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="200dp"
+        android:onClick="calcResult"
         android:text="@string/calcular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        android:onClick="calcResult"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvResultado" />
 
     <EditText
         android:id="@+id/eteInputTA"
@@ -67,7 +67,7 @@
         android:ems="10"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.283"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvTA"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,12 +78,9 @@
         android:text="@string/te_vas_por"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/butCalcular"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.312"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEP"
-        app:layout_constraintVertical_bias="0.569" />
+        app:layout_constraintBottom_toBottomOf="@+id/tvResultado"
+        app:layout_constraintEnd_toEndOf="@+id/tvEP"
+        app:layout_constraintTop_toTopOf="@+id/tvResultado" />
 
     <TextView
         android:id="@+id/tvResultado"
@@ -92,11 +89,10 @@
         android:text=""
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/butCalcular"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tviTeVasX"
-        app:layout_constraintTop_toBottomOf="@+id/eteInputEP"
-        app:layout_constraintVertical_bias="0.545" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
